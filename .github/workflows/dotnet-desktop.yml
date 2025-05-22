@@ -1,0 +1,23 @@
+name: .NET Core CI
+
+on:
+  push:
+    branches: [ develop ]  # Запуск при комітах у гілку develop
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4      # Клонує репозиторій
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3  # Встановлює .NET SDK
+        with:
+          dotnet-version: '6.0.x'      # Версія .NET
+      - name: Restore dependencies
+        run: dotnet restore src/MyApp.sln  # Відновлює NuGet-пакети
+      - name: Build
+        run: dotnet build src/MyApp.sln --configuration Release --no-restore
+      - name: Run tests
+        run: dotnet test src/MyApp.sln --configuration Release --no-build --verbosity normal
