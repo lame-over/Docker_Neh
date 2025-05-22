@@ -1,0 +1,4 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp", "MyApp\MyApp.csproj", "{AAAA1111-AAAA-AAAA-AAAA-AAAAAAAAAAAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Tests", "MyApp.Tests\MyApp.Tests.csproj", "{BBBB2222-BBBB-BBBB-BBBB-BBBBBBBBBBBB}"
+EndProject
